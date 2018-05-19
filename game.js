@@ -37,9 +37,18 @@ function verificaTodasLinhas(lista) {
   
 }
 function verificatodascolunas(lista){
-  verificacoluna(lista[0]);
-  verificacoluna(lista[1]);
-  verificacoluna(lista[2]);
+  const c3l1 = lista[0].children[2]
+  const c3l2 = lista[1].children[2]
+  const c3l3 = lista[2].children[2]
+  const coluna3 = [c3l1,c3l2,c3l3]
+  verificacoluna(coluna3);
+
+  const c2l1 = lista[0].children[2]
+  const c2l2 = lista[1].children[2]
+  const c2l3 = lista[2].children[2]
+  const coluna2 = [c2l1,c2l2,c2l3]
+  verificacoluna(coluna2);
+  // verificacoluna(lista[2]);
 }
 function verificacoluna(lista){
 console.log(lista)
