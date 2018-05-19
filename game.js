@@ -33,12 +33,24 @@ function verificaTodasLinhas(lista) {
   verificaLinha(lista[0]);
   verificaLinha(lista[1]);
   verificaLinha(lista[2]);
+
+  
+}
+function verificatodascolunas(lista){
+  verificacoluna(lista[0]);
+  verificacoluna(lista[1]);
+  verificacoluna(lista[2]);
+}
+function verificacoluna(lista){
+console.log(lista)
 }
 
 function verificaGanhador() {
   const jogo = document.getElementById('jogo');
   verificaTodasLinhas(jogo.children);
+  verificatodascolunas(jogo.children);
 }
+
 
 function desenhe(e) {
   const element = e.target;
@@ -57,3 +69,4 @@ function desenhe(e) {
 }
 
 document.addEventListener('click', desenhe);
+
