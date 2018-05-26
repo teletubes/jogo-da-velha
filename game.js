@@ -36,23 +36,33 @@ function verificaTodasLinhas(lista) {
 
   
 }
-function verificatodascolunas(lista){
-  const c3l1 = lista[0].children[2]
-  const c3l2 = lista[1].children[2]
-  const c3l3 = lista[2].children[2]
+function verificatodascolunas(linha){
+  const c3l1 = linha[0].children[2]
+  const c3l2 = linha[1].children[2]
+  const c3l3 = linha[2].children[2]
   const coluna3 = [c3l1,c3l2,c3l3]
   verificacoluna(coluna3);
-
-  const c2l1 = lista[0].children[2]
-  const c2l2 = lista[1].children[2]
-  const c2l3 = lista[2].children[2]
+  
+  const c2l1 = linha[0].children[1]
+  const c2l2 = linha[1].children[1]
+  const c2l3 = linha[2].children[1]
   const coluna2 = [c2l1,c2l2,c2l3]
   verificacoluna(coluna2);
-  // verificacoluna(lista[2]);
+
+  const c1l0 = linha[0].children[0]
+  const c1l1 = linha[1].children[0]
+  const c1l2 = linha[2].children[0]
+  const coluna0 = [c1l0,c1l1,c1l2]
+  verificacoluna(coluna0)
 }
-function verificacoluna(lista){
-console.log(lista)
-}
+function verificacoluna(listaElementos){
+if (listaElementos[0].textContent == listaElementos[1].textContent
+&& listaElementos[1].textContent == listaElementos[2].textContent) {
+  if (taVazio(listaElementos[1]))return;
+  const ganhador = listaElementos[1].textContent;
+  alert(`${ganhador} Ganhou`)
+  document.getElementById('resultado').innerText = ganhador;
+}}
 
 function verificaGanhador() {
   const jogo = document.getElementById('jogo');
