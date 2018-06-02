@@ -84,6 +84,7 @@ function verificadiagonal(listaElementos){
   }}
 function verificaGanhador() {
   const jogo = document.getElementById('jogo');
+  verificaTodasLinhas(jogo.children)
   verificatodasdiagonais(jogo.children);
   verificatodascolunas(jogo.children);
 }
