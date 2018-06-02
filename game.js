@@ -63,10 +63,28 @@ if (listaElementos[0].textContent == listaElementos[1].textContent
   alert(`${ganhador} Ganhou`)
   document.getElementById('resultado').innerText = ganhador;
 }}
-
+function verificatodasdiagonais(linha){
+  const c0l0 = linha[0].children[0]
+  const c1l1 = linha[1].children[1]
+  const c2l2 = linha[2].children[2]
+  const diagonal1 = [c0l0,c1l1,c2l2]
+  verificadiagonal(diagonal1)
+  const c1l0 = linha[0].children[1]
+  const c0l2 = linha[0].children[2]
+  const diagonal2 = [c1l0,c1l1,c0l2] 
+   verificadiagonal(diagonal2)
+}
+function verificadiagonal(listaElementos){
+  if (listaElementos[0].textContent == listaElementos[1].textContent
+  && listaElementos[1].textContent == listaElementos[2].textContent) {
+    if (taVazio(listaElementos[1]))return;
+    const ganhador = listaElementos[1].textContent;
+    alert(`${ganhador} Ganhou`)
+    document.getElementById('resultado').innerText = ganhador;
+  }}
 function verificaGanhador() {
   const jogo = document.getElementById('jogo');
-  verificaTodasLinhas(jogo.children);
+  verificatodasdiagonais(jogo.children);
   verificatodascolunas(jogo.children);
 }
 
