@@ -26,6 +26,8 @@ function verificaLinha(linha) {
     const ganhador = listaElementos.item(1).textContent;
     alert(`${ganhador} Ganhou`)
     document.getElementById('resultado').innerText = ganhador;
+ atualizapagina()
+    
   }
 }
 
@@ -62,6 +64,7 @@ if (listaElementos[0].textContent == listaElementos[1].textContent
   const ganhador = listaElementos[1].textContent;
   alert(`${ganhador} Ganhou`)
   document.getElementById('resultado').innerText = ganhador;
+  atualizapagina()
 }}
 function verificatodasdiagonais(linha){
   const c0l0 = linha[0].children[0]
@@ -81,6 +84,7 @@ function verificadiagonal(listaElementos){
     const ganhador = listaElementos[1].textContent;
     alert(`${ganhador} Ganhou`)
     document.getElementById('resultado').innerText = ganhador;
+    atualizapagina()    
   }}
 function verificaGanhador() {
   const jogo = document.getElementById('jogo');
@@ -108,3 +112,6 @@ function desenhe(e) {
 
 document.addEventListener('click', desenhe);
 
+function atualizapagina(){
+  location.reload();
+}
